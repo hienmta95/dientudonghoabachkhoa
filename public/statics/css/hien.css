@@ -1,0 +1,162 @@
+.top-line {
+	background: #111111d9;
+    padding: 10px 0;
+    color: #ffffffe0;
+}
+.top-line .col-md-4 i {
+	padding: 0 4px;
+	color: #ffffffe0;
+}
+#sidenav01 li {
+	width: 100%;
+	position: relative;
+}
+#sidenav01 li a.title {
+	text-transform: uppercase;
+	font-size: 13px;
+	color: #808285 ;
+	padding: 10px 25px;
+}
+#sidenav01 li a.button {
+	position: absolute;
+    right: 0;
+    top: 0;
+    padding: 18px;
+    cursor: pointer;
+}
+#sidenav01 li a.button:visited {
+    background-color: #f9f9f9;s
+}
+@media (max-width: 769px){
+	#sidenav01 li a.button {
+	    right: 15;
+	}
+}
+
+
+#sidenav01 .nav-list li a {
+	text-transform: uppercase;
+    font-size: 13px;
+    color: #808285;
+    padding: 5px 35px;
+}
+
+.thongso {
+	font-size: 14px;
+}
+.thongso td {
+	min-width: 120px;
+}
+
+.code-product-info {
+	margin-bottom: 10px;
+}
+
+
+.socials-share {
+    text-align: right;
+    margin-bottom: 0px;
+}
+
+.socials-share a {
+    padding: 0px 10px;
+    color: #fff;
+    line-height: 23px;
+    border-radius: 2px;
+    white-space: nowrap;
+    display: inline-block;
+    margin-bottom: 4px;
+    margin-top: 20px;
+}
+
+.socials-share span.fa {
+    margin-right: 3px;
+}
+
+.bg-facebook {
+    background: #3a5899;
+}
+
+.bg-facebook:hover, .bg-facebook:focus {
+    background: #1d418d;
+}
+
+.bg-twitter {
+    background: #00acee;
+}
+
+.bg-twitter:hover, .bg-twitter:focus {
+    background: #0b93c7;
+}
+
+.bg-google-plus {
+    background: #db4437;
+}
+
+.bg-google-plus:hover, .bg-google-plus:focus {
+    background: #bb2a1d;
+}
+
+.bg-pinterest {
+    background: #cb1e26;
+}
+
+.bg-pinterest:hover, .bg-pinterest:focus {
+    background: #ae0e15;
+}
+
+.bg-email {
+    background: #dd5348;
+}
+
+.bg-email:hover, .bg-email:focus {
+    background: #ce3f34;
+}
+
+
+@media (min-width: 1000px){
+    .slick-slide {
+        height: 220px !important;
+        cursor: pointer;
+    }
+}
+
+@media (max-width: 1000px){
+    .slick-slide {
+        height: 120px !important;
+        cursor: pointer;
+    }
+}
+
+
+.tab-pro-d span a {
+    color: #f48c1f;
+}
+
+.breadcrumb li a{
+    line-height: 16px;
+}
+
+.detailtext {
+    margin-top: 0px !important;
+}
+
+.title2 a {
+    font-size: 17px !important;
+}
+
+.codepr span {
+    display: block;
+}
+
+
+#sidenav01 li.active {
+    background-color: #dedede;
+}
+
+#sidenav01 li ul li {
+    background: #f9f9f9;
+}
+#sidenav01 li a.button:hover {
+    background: #fff !important;
+}
