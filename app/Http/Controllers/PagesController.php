@@ -18,7 +18,7 @@ use App\Notifications\ToAdmin;
 
 class PagesController extends Controller
 {
-    protected $mail_admin = 'hien.kbhbt@gmail.com';
+    protected $mail_admin = 'eabachkhoa@gmail.com';
 
     function __construct()
     {
