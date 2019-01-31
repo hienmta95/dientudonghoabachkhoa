@@ -29,7 +29,7 @@ return [
     |
     */
 
-    'host' => env('MAIL_HOST', 'smtp.gmail.com'),
+    'host' => env('MAIL_HOST', 'smtp.mailgun.org'),
 
     /*
     |--------------------------------------------------------------------------
@@ -56,8 +56,8 @@ return [
     */
 
     'from' => [
-        'address' => env('MAIL_USERNAME'),
-        'name' => env('MAIL_FROM_NAME', 'Hien xconnecting'),
+        'address' => env('MAIL_FROM_ADDRESS', 'hello@example.com'),
+        'name' => env('MAIL_FROM_NAME', 'Example'),
     ],
 
     /*
@@ -100,7 +100,6 @@ return [
     */
 
     'sendmail' => '/usr/sbin/sendmail -bs',
-    'pretend' => false,
 
     /*
     |--------------------------------------------------------------------------
@@ -118,14 +117,6 @@ return [
 
         'paths' => [
             resource_path('views/vendor/mail'),
-        ],
-    ],
-
-    'stream' => [
-        'ssl' => [
-            'allow_self_signed' => true,
-            'verify_peer' => false,
-            'verify_peer_name' => false,
         ],
     ],
 

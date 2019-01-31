@@ -12,10 +12,14 @@ use App\trangcon;
 use App\loaisukien;
 use App\nhomsanpham;
 use Mail;
+use App\Notifications\ToUser;
+use App\Notifications\ToAdmin;
 
 
 class PagesController extends Controller
 {
+    protected $mail_admin = 'hien.kbhbt@gmail.com';
+
     function __construct()
     {
         $slide1 = slide::all();
@@ -69,11 +73,11 @@ class PagesController extends Controller
         return view('pages.nhomsanpham',['sanpham'=>$sukien, 'nhom'=>$nhomsanpham]);
     }
 
-
     function getDangnhap()
     {
         return view('pages.dangnhap');  
     } 
+
     function postDangnhap(Request $req)
     {
         $this->validate($req, 
@@ -99,6 +103,7 @@ class PagesController extends Controller
             return redirect('dangnhap')->with('loi','Đăng nhập không thành công');
         } 
     } 
+
     function getDangxuat()
     {
         Auth::logout();
@@ -225,44 +230,59 @@ class PagesController extends Controller
 
         return redirect('dangki')->with('thongbao','Đã đăng kí thành công');
     }
-    
-    
 
-     public function getLienhe()
+    public function getLienhe()
     {
         return view('pages.lienhe');
     }
     public function postLienhe(Request $req)
     {
 
-        $this->validate($req, 
-        [
-            'hoten' => 'required|min:3|max:100',
-            'email' => 'required',
-            'sdt' => 'required',
-            'noidung' => 'required',
-        ],
-        [
-            'hoten.required' => 'Chưa nhập họ tên',
-            'email.required' => 'Chưa nhập email',
-            'sdt.required' => 'Chưa nhập số điện thoại',
-            'noidung.required' => 'Chưa nhập nội dung',
-            'ten.min' => 'Tên loại có độ dài trong khoảng từ 3-100 kí tự',
-            'ten.max' => 'Tên loại có độ dài trong khoảng từ 3-100 kí tự'
-        ]);
+//        $this->validate($req,
+//        [
+//            'hoten' => 'required|min:3|max:100',
+//            'email' => 'required',
+//            'sdt' => 'required',
+//            'noidung' => 'required',
+//        ],
+//        [
+//            'hoten.required' => 'Chưa nhập họ tên',
+//            'email.required' => 'Chưa nhập email',
+//            'sdt.required' => 'Chưa nhập số điện thoại',
+//            'noidung.required' => 'Chưa nhập nội dung',
+//            'ten.min' => 'Tên loại có độ dài trong khoảng từ 3-100 kí tự',
+//            'ten.max' => 'Tên loại có độ dài trong khoảng từ 3-100 kí tự'
+//        ]);
+//
+//        $lienhe = new lienhe;
+//
+//        $lienhe->hoten = $req->hoten;
+//        $lienhe->email = $req->email;
+//        $lienhe->sdt = $req->sdt;
+//        $lienhe->diachi = $req->diachi;
+//        $lienhe->noidung = $req->noidung;
+//        $lienhe->status = 0;
+//
+//        $lienhe->save();
 
-        $lienhe = new lienhe;
+        $this->sendMailUser($req->email, $req->all());
+        $this->sendMailAdmin($this->mail_admin, $req->all());
 
-        $lienhe->hoten = $req->hoten;
-        $lienhe->email = $req->email;
-        $lienhe->sdt = $req->sdt;
-        $lienhe->diachi = $req->diachi;
-        $lienhe->noidung = $req->noidung;
-        $lienhe->status = 0;
+        return redirect('lienhe')->with('thongbao', 'Gửi liên hệ thành công');
+    }
 
-        $lienhe->save();
-        
-        return redirect('lienhe')->with('thongbao','Gửi liên hệ thành công');
+    public function sendMailUser($email, $data)
+    {
+        $user = new User();
+        $user->email = $email;
+        $user->notify(new ToUser($data));
+    }
+
+    public function sendMailAdmin($email, $data)
+    {
+        $user = new User();
+        $user->email = $email;
+        $user->notify(new ToAdmin($data));
     }
 
     function Timkiem(Request $req)

@@ -170,7 +170,7 @@ Route::group(['prefix'=>'admin', 'middleware'=>'dashboard'], function(){
 });
 
 
-Route::get('/','PagesController@getIndex');
+Route::get('/','PagesController@getIndex')->name('homepage');
 Route::get('sanpham/{id}/{slug}.html','PagesController@sukien');
 Route::get('loaisanpham/{id}/{slug}.html','PagesController@loaisukien');
 Route::get('nhomsanpham/{id}/{slug}.html','PagesController@nhomsanpham');
