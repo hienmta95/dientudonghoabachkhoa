@@ -27,7 +27,7 @@
               <div class="">
                 <div class="col-md-6">
                   <a href="/tu-van-thiet-ke_29.html/#bottom">
-                    <img style="width: 100%;" src="upload/tuvan.jpg">
+                    <img style="width: 100%; margin-bottom: 10px" src="upload/tuvan.jpg">
                   </a>
                 </div>
                 <div class="col-md-6">

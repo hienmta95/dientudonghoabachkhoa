@@ -148,7 +148,7 @@
           </div>
 
           <div style="position: absolute;    top: 28px;   right: 15px;">
-          	<span style="font-size: 21px;color: red; font-weight: 700;">Hotline: 024.62 92 39 69</span>
+          	<a href="tel:0938850688"><span style="font-size: 21px;color: red; font-weight: 700;">Hotline: 093 885 0688</span></a>
           </div>
 
         </div>

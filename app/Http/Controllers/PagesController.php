@@ -238,32 +238,32 @@ class PagesController extends Controller
     public function postLienhe(Request $req)
     {
 
-//        $this->validate($req,
-//        [
-//            'hoten' => 'required|min:3|max:100',
-//            'email' => 'required',
-//            'sdt' => 'required',
-//            'noidung' => 'required',
-//        ],
-//        [
-//            'hoten.required' => 'Chưa nhập họ tên',
-//            'email.required' => 'Chưa nhập email',
-//            'sdt.required' => 'Chưa nhập số điện thoại',
-//            'noidung.required' => 'Chưa nhập nội dung',
-//            'ten.min' => 'Tên loại có độ dài trong khoảng từ 3-100 kí tự',
-//            'ten.max' => 'Tên loại có độ dài trong khoảng từ 3-100 kí tự'
-//        ]);
-//
-//        $lienhe = new lienhe;
-//
-//        $lienhe->hoten = $req->hoten;
-//        $lienhe->email = $req->email;
-//        $lienhe->sdt = $req->sdt;
-//        $lienhe->diachi = $req->diachi;
-//        $lienhe->noidung = $req->noidung;
-//        $lienhe->status = 0;
-//
-//        $lienhe->save();
+        $this->validate($req,
+        [
+            'hoten' => 'required|min:3|max:100',
+            'email' => 'required',
+            'sdt' => 'required',
+            'noidung' => 'required',
+        ],
+        [
+            'hoten.required' => 'Chưa nhập họ tên',
+            'email.required' => 'Chưa nhập email',
+            'sdt.required' => 'Chưa nhập số điện thoại',
+            'noidung.required' => 'Chưa nhập nội dung',
+            'ten.min' => 'Tên loại có độ dài trong khoảng từ 3-100 kí tự',
+            'ten.max' => 'Tên loại có độ dài trong khoảng từ 3-100 kí tự'
+        ]);
+
+        $lienhe = new lienhe;
+
+        $lienhe->hoten = $req->hoten;
+        $lienhe->email = $req->email;
+        $lienhe->sdt = $req->sdt;
+        $lienhe->diachi = $req->diachi;
+        $lienhe->noidung = $req->noidung;
+        $lienhe->status = 0;
+
+        $lienhe->save();
 
         $this->sendMailUser($req->email, $req->all());
         $this->sendMailAdmin($this->mail_admin, $req->all());
