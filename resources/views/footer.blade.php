@@ -128,7 +128,7 @@
           </li>
 
           <li>
-            <a href="#"><img src="statics/imgs/social/fb.png" /></a>
+            <a href="https://www.facebook.com/daychuyenlocnuoccongnghiep/"><img src="statics/imgs/social/fb.png" /></a>
           </li>
 
           <li>
@@ -258,7 +258,7 @@
       </div>
 
       <div class="copyright-d">
-        <a class="link-copyright">Copyright 2018 Bach Khoa A&E Constech JSC</a>
+        <a class="link-copyright">Copyright 2019 Bach Khoa A&E Constech JSC</a>
 
         <div class="option-right-bt">
           <ul class="list-option-right">

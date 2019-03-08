@@ -2,7 +2,7 @@
   <div class="container">
     <div class="row">
       <div class="col-md-4 col-sm-4 col-xs-6">
-        <a href="#"><i class="fa fa-facebook-f"></i></a>
+        <a href="https://www.facebook.com/daychuyenlocnuoccongnghiep/"><i class="fa fa-facebook-f"></i></a>
         <a href="#"><i class="fa fa-twitter"></i></a>
         <a href="#"><i class="fa fa-google"></i></a>
         <a href="#"><i class="fa fa-instagram"></i></a>
